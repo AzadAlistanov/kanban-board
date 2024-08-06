@@ -1,0 +1,89 @@
+.header {
+  background: rgba(0, 103, 163, 1);
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+
+}
+
+.user__wrap {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 50px;
+  position: relative;
+}
+
+.avatar img {
+  width: 27px;
+  height: 34px;
+  position: absolute;
+  left: 5px;
+  top: 2px;
+}
+
+.drop {
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.drop-active {
+  transform: rotate(180deg);
+}
+
+.drop-down-list {
+  font-size: 14px;
+  width: 134px;
+  height: 60px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  padding: 8px 0 0 7px;
+  position: absolute;
+  top: 45px;
+  left: -80px;
+  z-index: 1;
+}
+
+.drop-down-list::before {
+  content: '';
+  background-image: url('/public/images/triangle.svg');
+  width: 15px;
+  height: 11px;
+  position: absolute;
+  top: -6px;
+  right: 28px;
+}
+
+li {
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+li:hover {
+  background: #0067a342;
+}
+
+@media (max-width: 415px) {
+  .logo {
+    display: none;
+  }
+
+  .user__wrap {
+    margin-left: auto;
+  }
+}

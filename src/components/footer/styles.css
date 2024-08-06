@@ -1,0 +1,26 @@
+.footer {
+  background: rgba(0, 103, 163, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer__wrap {
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__tasks-wrap {
+  display: flex;
+
+}
+
+.finished-tasks {
+  margin-left: 36px;
+}
+
+@media (max-width: 415px) {
+  .footer {
+    display: none;
+  }
+}

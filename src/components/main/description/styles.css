@@ -1,0 +1,45 @@
+.description-wrap {
+  margin: 22px;
+  padding: 22px;
+  background: white;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.description-btn {
+  text-align: end;
+}
+
+.description-close {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.description {
+  min-height: 300px;
+  max-width: 621px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 35px;
+  padding: 5px;
+}
+
+.save-description {
+  position: absolute;
+  bottom: -42px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border: none;
+  background: #5cd6ae;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.save-description:hover {
+  background: #0ae699;
+}

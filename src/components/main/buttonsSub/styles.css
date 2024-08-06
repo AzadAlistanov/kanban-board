@@ -1,0 +1,57 @@
+.add-card button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 17px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.add-card button:hover {
+  background: white;
+}
+
+.add-card p {
+  margin-left: 3px;
+  color: rgba(94, 108, 132, 1);
+}
+
+.submit button {
+  background: rgba(0, 121, 191, 1);
+  padding: 5px 20px;
+
+}
+
+.submit button:hover {
+  background: rgb(27, 225, 113);
+}
+
+.submit p {
+  color: white;
+}
+
+input {
+  width: 100%;
+  border: none;
+  font-size: 18px;
+}
+
+input:focus-visible {
+  outline: none;
+  border-bottom: 2px solid #c8d4c8;
+}
+
+.task-drop {
+  background: url("/public/images/drop-select.png")rgba(255, 255, 255, 1) no-repeat right center;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: none;
+  width: 100%;
+  appearance: none;
+  background-position-x: 95%;
+  font-size: 18px;
+  cursor: pointer;
+}

@@ -1,0 +1,49 @@
+main {
+  background: rgba(0, 121, 191, 1);
+}
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 300px;
+  padding-top: 20px;
+  padding-bottom: 32px;
+  font-size: 18px;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+
+.task-block {
+  width: 282px;
+  max-height: 538px;
+  border-radius: 10px;
+  background: rgba(235, 236, 240, 1);
+  padding: 12px;
+}
+
+.task-list {
+  max-height: 400px;
+  overflow: overlay;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: white;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: rgba(203, 203, 203, 1);
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .board {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
