@@ -1,14 +1,30 @@
+import { RefObject, useRef } from 'react';
 import { TBlock } from '../../../types';
 import { useChangeCard } from '../../hooks/useChangeCard';
 import './styles.css';
 
 
 function ChangeCard({ nameBlock }: { nameBlock: TBlock }) {
+  const refBtn = useRef() as RefObject<HTMLButtonElement> | null;
+  const { isSubmit, tasks, addCard, getIdNewTask, activeBtn } = useChangeCard(nameBlock);
 
-  const { isSubmit, tasks, addCard, getIdNewTask } = useChangeCard(nameBlock);
   const focusAddCard = () => {
     addCard();
   }
+
+  const handleMouseEnter = () => {
+    if (refBtn?.current) {
+      refBtn.current.style.background = 'white';
+      refBtn.current.style.cursor = 'pointer';
+    }
+  }
+
+  const handleMouseLeave = () => {
+    if (refBtn?.current) {
+      refBtn.current.style.background = 'none';
+    }
+  }
+
   return (
     <>
       {isSubmit ?
@@ -35,6 +51,11 @@ function ChangeCard({ nameBlock }: { nameBlock: TBlock }) {
         :
         <div className='add-card'>
           <button
+            style={{ cursor: activeBtn === 0 ? 'not-allowed' : 'pointer' }}
+            ref={refBtn}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            disabled={activeBtn === 0 ? true : false}
             onClick={() => focusAddCard()}
           >
             <img src="/images/plus.svg" alt="add card" />

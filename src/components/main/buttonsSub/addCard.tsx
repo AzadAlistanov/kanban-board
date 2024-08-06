@@ -59,6 +59,7 @@ function AddCard() {
         :
         <div className='add-card'>
           <button
+            className='add-card-btn'
             onClick={addCard}
           >
             <img src="/images/plus.svg" alt="add card" />

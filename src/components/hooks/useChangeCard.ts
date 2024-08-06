@@ -11,25 +11,30 @@ export const useChangeCard = (block: TBlock) => {
   const { backlog, ready, inProgress } = useAppSelector((state: { tasks: IState }) => state.tasks);
   let tasks: TTask[] | [] = [];
   let addTask: () => void;
+  let activeBtn = 0;
 
   if (block === 'backlog') {
     tasks = backlog;
-    addTask = () => dispatch(addBacklog({ id: newTask }))
+    addTask = () => dispatch(addBacklog({ id: newTask }));
   }
 
   if (block === 'ready') {
     tasks = backlog;
-    addTask = () => dispatch(addReady({ id: newTask }))
+    addTask = () => dispatch(addReady({ id: newTask }));
+    activeBtn = backlog.length;
   }
 
   if (block === 'inProgress') {
     tasks = ready;
-    addTask = () => dispatch(addInProgress({ id: newTask }))
+    addTask = () => dispatch(addInProgress({ id: newTask }));
+    activeBtn = ready.length;
+
   }
 
   if (block === 'finished') {
     tasks = inProgress;
-    addTask = () => dispatch(addFinished({ id: newTask }))
+    addTask = () => dispatch(addFinished({ id: newTask }));
+    activeBtn = inProgress.length;
   }
 
   const addCard = () => {
@@ -45,7 +50,8 @@ export const useChangeCard = (block: TBlock) => {
     isSubmit,
     tasks,
     addCard,
-    getIdNewTask
+    getIdNewTask,
+    activeBtn
   }
 
 }
